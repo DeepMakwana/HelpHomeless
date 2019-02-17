@@ -1,0 +1,117 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/andres-medina-229063-unsplash.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-4 col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-success text-center">
+                            <h5 style="margin-bottom: 0px;">Welcome</h5>
+                            <h4 style="margin-top: 0px;"><b>{{ user.first_name }} {{ user.last_name }}</b></h4>
+                        </div>
+                        <div class="card-body text-center">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-sm-8"><h5><b>No. of Donations: </b></h5><hr/></td>
+                                        <td class="col-sm-4"><h5><b>100</b></h5><hr/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-8"><h5><b>Points Earned: </b></h5></td>
+                                        <td class="col-sm-4"><h5><b>100</b></h5></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm- col-md-8">
+                    <div class="card" style="padding-bottom: 15px;">
+                        <div class="card-header">
+                            <h3 class="text-center">Make a Donation!</h3>
+                        </div>
+                        <form (submit)="onFormSubmit()">
+                            <div class="card-body">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-sm-6">
+                                                <h5><b>Number of clothes:</b></h5>
+                                            </td>
+                                            <td class="col-sm-6"><input type="number" [(ngModel)]="noOfClothes" name="noOfClothes" class="form-control" required placeholder="Number of Clothes..."></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-6">
+                                                <h5><b>Date:</b></h5>
+                                            </td>
+                                            <td class="col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="input-group date" [ngClass]="{'input-group-focus':focus===true}">
+                                                        <input class="form-control" placeholder="yyyy-mm-dd" name="date" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus=true" (blur)="focus=false" />
+                                                        <div class="input-group-append">
+                                                            <span class="glyphicon glyphicon-calendar input-group-text">
+                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-sm-6">
+                                                <h5><b>Time:</b></h5>
+                                            </td>
+                                            <td class="col-sm-6">
+                                                <h5><b>5:00pm EST</b></h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="card-footer">
+                                    <hr />
+                                    <button type="submit" name="button" class="btn btn-success pull-right">Submit Request</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <hr *ngIf="user.isVolunteer"/>
+                    <div class="card" style="z-index: 0;" *ngIf="user.isVolunteer">
+                        <div class="card-header">
+                            <h3 class="text-center">Want to volunteer? </h3>
+                            <p class="text-center">You'll get rewards for volunteering</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <ngb-tabset [justify]="'center'">
+                                        <ngb-tab title="Become a Driver">
+                                            <ng-template ngbTabContent>
+                                                <h5>You'll be getting 10 points per pick-up point</h5>
+                                                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]=13>
+                                                    <agm-direction *ngFor="let i of rangeOfDestinations" [origin]="locationList[i]" [destination]="locationList[i+1]">
+                                                    </agm-direction>
+                                                </agm-map>
+                                            </ng-template>
+                                        </ngb-tab>
+                                        <ngb-tab title="Become a Distributor">
+                                            <ng-template ngbTabContent>
+                                                <h5>You'll be getting 25 points to distibute clothes at our disctribution center</h5>
+                                                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]=13>
+                                                    <agm-marker [latitude]="destination.lat" [longitude]="destination.lng">
+                                                    </agm-marker>
+                                                </agm-map>
+                                            </ng-template>
+                                        </ngb-tab>
+                                    </ngb-tabset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

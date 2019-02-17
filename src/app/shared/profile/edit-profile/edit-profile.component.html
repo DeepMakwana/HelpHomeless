@@ -1,0 +1,158 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/andres-medina-229063-unsplash.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="./assets/img/faces/clem-onojeghuo-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+            </div>
+            <h3>Edit Profile</h3>
+            <form #proForm="ngForm" (submit)="onSave()">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        <h6>Profile Image</h6>
+                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;">
+                                <img [src]="selectedFileUrl" alt="Placeholder">
+                                <input name="pro_image" style="display: none" type="file" (change)="onFileChanged($event)" accept="image/*" #fileInput>
+                            </div>
+                            <div>
+                                <span class="btn btn-outline-default btn-round btn-file" (click)="fileInput.click()">
+                                    <span [ngStyle]="{'display': fileCheck? 'none' : 'block'}">Select image</span>
+                                    <span [ngStyle]="{'display': fileCheck? 'block' : 'none'}">Change</span>
+                                </span>
+                                <a class="btn btn-link btn-danger" style="color: #f5593d !important;" [ngStyle]="{'display': fileCheck? 'block' : 'none'}" (click)="fileCheck = false; selectedFileUrl = this.default" data-dismiss="fileinput"><i class="fa fa-times"></i>
+                                    Remove</a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Gender <span class="icon-danger">*</span></h6><br />
+                                <div class="form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderM" value="Male" [(ngModel)]="gender">
+                                        Male
+                                        <span class="form-check-sign"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderF" value="Female" [(ngModel)]="gender">
+                                        Female
+                                        <span class="form-check-sign"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-sm-7">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>First Name <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="First Name..." name="first_name" [(ngModel)]="first_name" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Last Name <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Last Name..." name="last_name" [(ngModel)]="last_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Email <span class="icon-danger">*</span></h6>
+                                    <input type="email" class="form-control border-input" placeholder="Enter your Email ID here..." name="email" [(ngModel)]="email" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Mobile Number<span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Mobile Number..." name="mobileNo" [(ngModel)]="mobileNo" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Username <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Username..." name="username" [(ngModel)]="username" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Age<span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Age..." name="age" [(ngModel)]="age" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h6>Address Line 1<span class="icon-danger">*</span></h6>
+                            <input type="text" class="form-control border-input" placeholder="Address Line 1..." name="address1" [(ngModel)]="address1" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-md-8">
+                                <div class="form-group">
+                                    <h6>Address Line 2<span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Address Line 2..." name="address2" [(ngModel)]="address2" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>City <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="City..." name="city" [(ngModel)]="city" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>State <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="State..." name="state" [(ngModel)]="state" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Zip Code <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="State..." name="zipCode" [(ngModel)]="zipCode" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <h6>Country <span class="icon-danger">*</span></h6>
+                                    <input type="text" class="form-control border-input" placeholder="Country..." name="country" [(ngModel)]="country" disabled required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="">
+                                By clicking this you agree to the terms and condiontions.
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row buttons-row">
+                    <div class="col-md-4 col-sm-4 ml-auto">
+                        <button class="btn btn-outline-danger btn-block btn-round" (click)="this.router.navigate(['/profile'])">Cancel</button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 mr-auto">
+                        <button class="btn btn-outline-success btn-block btn-round" type="submit" [disabled]="!proForm.valid" placement="top" [ngbTooltip]="!proForm.valid ? 'Please Complete all Fields!' : 'You are good to go :)'">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

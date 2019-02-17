@@ -1,0 +1,393 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/andres-medina-229063-unsplash.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <div class="owner">
+                <div class="avatar">
+                    <img src="./assets/img/faces/clem-onojeghuo-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                </div>
+                <div class="name">
+                    <h4 class="title"><b>{{ user.first_name }} {{ user.last_name }}</b></h4>
+                    <!-- <h6 class="description">{{ user.email }}</h6> -->
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-6 ml-auto mr-auto text-center">
+                    <p>An artist of considerable range, Jane Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                    <br />
+                    <button class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</button>
+                </div>
+            </div>
+            <br/>
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ngb-tabset [justify]="'center'">
+                        <ngb-tab title="Follows">
+                            <ng-template ngbTabContent >
+                                <div class="row following" id="follows">
+                                    <div class="col-md-6 ml-auto mr-auto">
+                                        <ul class="list-unstyled follows">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                        <img src="./assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-4 ml-auto">
+                                                        <h6>Flume<br/><small>Musical Producer</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                        <div class="form-check">
+                                                          <label class="form-check-label">
+                                                            <input class="form-check-input" type="checkbox" value="" checked="">
+                                                            <span class="form-check-sign"></span>
+                                                          </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <hr />
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                        <img src="./assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                    </div>
+                                                    <div class="col-md-7 col-sm-4 ml-auto">
+                                                        <h6>Banks<br /><small>Singer</small></h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                        <div class="form-check">
+                                                          <label class="form-check-label">
+                                                            <input class="form-check-input" type="checkbox" value="" checked="">
+                                                            <span class="form-check-sign"></span>
+                                                          </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab title="Following">
+                            <ng-template ngbTabContent>
+                                <h3 class="text-muted">Not following anyone yet :(</h3>
+                                <br>
+                                <button class="btn btn-warning btn-round">Find artists</button>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div> -->
+            <!-- <div class="ml-auto mr-auto text-center">
+                <h4 class="title"><b>{{ user.first_name }} {{ user.last_name }}</b></h4>
+            </div> -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ngb-tabset [justify]="'center'">
+                                <ngb-tab title="Profile Details">
+                                    <ng-template ngbTabContent>
+                                        <div class="table-responsive" style="overflow-x: hidden;">
+                                            <div class="row">
+                                                <div class="col-sm-6 ml-auto mr-auto">
+                                                    <table class="table" style="text-align: left;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="col-sm-6" style="border-top: none !important;">
+                                                                    <h6>Username:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" style="border-top: none !important;">{{ user.username }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Email:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6">{{ user.email }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Mobile Number:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.mobileNo ? 'color': 'red'">
+                                                                    {{ user.mobileNo ? user.mobileNo : 'Please Update Your Profile' }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Gender:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.gender ? 'color': 'red'">
+                                                                    {{ user.gender ? user.gender : 'Please Update Your Profile' }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Age:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.age ? 'color': 'red'">
+                                                                    {{ user.age ? user.age : 'Please Update Your Profile' }}
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Address Line 1:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.address1 ? 'color': 'red'">{{ user.address1 ? user.address1 : 'Please Update Your Profile' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Address Line 2:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.address2 ? 'color': 'red'">{{ user.address2 ? user.address2 : 'Please Update Your Profile' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>City:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.city ? 'color': 'red'">{{ user.city ? user.city : 'Please Update Your Profile' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>State:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.state ? 'color': 'red'">{{ user.state ? user.state : 'Please Update Your Profile' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-sm-6">
+                                                                    <h6>Zip Code:</h6>
+                                                                </td>
+                                                                <td class="col-sm-6" [ngClass]="user.zipCode ? 'color': 'red'">{{ user.zipCode ? user.zipCode : 'Please Update Your Profile' }}</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ngb-tab>
+                                <ngb-tab title="Verfication Status">
+                                    <ng-template ngbTabContent>
+                                        <div class="row following" id="follows">
+                                            <div class="col-md-6 ml-auto mr-auto">
+                                                <ul class="list-unstyled follows">
+                                                    <li style="margin-top: 20px;">
+                                                        <div class="row">
+                                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                                <img src="../assets/img/mobile.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                            </div>
+                                                            <div class="col-md-7 col-sm-4 ml-auto">
+                                                                <h5 [ngStyle]="{'margin-top': (user.mobNo && user.mobVer)? '10px' : '0px'}">
+                                                                    Mobile Number<br />
+                                                                    <small [ngClass]="(user.mobNo && user.mobVer) ? 'color': 'red'">
+                                                                        {{ user.mobNo ? user.mobNo : 'Please Update Your Profile' }}
+                                                                        <span style="color: red;" *ngIf="!user.mobVer && user.mobNo"><br />(Please verify)</span>
+                                                                    </small>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                                <div class="form-check" style="margin-top: 20px;" *ngIf="user.mobVer">
+                                                                    <label class="form-check-label">
+                                                                        <input class="form-check-input" type="checkbox" value="" checked="" disabled>
+                                                                        <span class="form-check-sign" style="font-size: 18px; color: green;">Verified</span>
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button" (click)="openMobileModal(mobileOTP)" class="btn btn-outline-info" *ngIf="!user.mobVer" style="margin-top: 15px;">Verify</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <hr />
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                                <img src="../assets/img/email.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                            </div>
+                                                            <div class="col-md-7 col-sm-4 ml-auto">
+                                                                <h5 [ngStyle]="{'margin-top': user.emailVer? '10px' : '0px'}">Email<br />
+                                                                    <small [ngClass]="(user.emailVer) ? 'color': 'red'">
+                                                                        {{ user.email }}
+                                                                        <span style="color: red;" *ngIf="!user.emailVer"><br />(Please verify)</span>
+                                                                    </small>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                                <div class="form-check" style="margin-top: 20px;" *ngIf="user.emailVer">
+                                                                    <label class="form-check-label">
+                                                                        <input class="form-check-input" type="checkbox" value="" checked="" disabled>
+                                                                        <span class="form-check-sign" style="font-size: 18px; color: green;"><b>Verified</b></span>
+                                                                    </label>
+                                                                </div>
+                                                                <button type="button" (click)="openEmailModal(emailVerification)" class="btn btn-outline-info" *ngIf="!user.emailVer" style="margin-top: 15px;">Verify</button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ngb-tab>
+                            </ngb-tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row buttons-row text-center">
+                <div class="col-md-4 col-sm-4">
+                    <button class="btn btn-rotate btn-round" (click)="open(changePassword)">
+                        <i class="fa fa-cog"></i> Change Password
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <button class="btn btn-rotate btn-round" (click)="this.router.navigate(['edit-profile'])">
+                        <i class="fa fa-cog"></i>Edit Profile
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <button class="btn btn-rotate btn-round" (click)="open(changeProfilePic)">
+                        <i class="fa fa-cog"></i> Change Profile Pic
+                    </button>
+                </div>
+            </div>
+
+
+            <br />
+
+            <!-- Change Password -->
+            <ng-template #changePassword let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center"><b>Change Password</b></h5>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="table-responsive">
+                        <div class="row">
+                            <table class="table" style="margin-bottom: 0px !important;">
+                                <tbody>
+                                    <tr>
+                                        <td style="border-top: none !important;">Old Password:</td>
+                                        <td class="col-md-6" style="border-top: none !important;">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Old Password">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>New Password:</td>
+                                        <td class="col-md-2">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="New Password">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Confirm Password:</td>
+                                        <td class="col-md-2">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="left-side">
+                        <button type="button" class="btn btn-success btn-link" (click)="c('Close click')">Save</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="right-side">
+                        <button type="button" class="btn btn-danger btn-link" (click)="c('Close click')">Cancel</button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <!-- Change Profile Picture -->
+            <ng-template #changeProfilePic let-c="close" let-d="dismiss">
+
+                <div class="modal-header">
+                    <h5 class="modal-title text-center"><b>Change Profile Picture</b></h5>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img [src]="selectedFileUrl" alt="Placeholder" style="width:100%; max-height:450px;"><br /><br />
+                    <input name="pro_image" style="display: none" type="file" (change)="onFileChanged($event)" accept="image/*" #fileInput>
+                </div>
+                <ngb-progressbar showValue="true" [type]="progressType" [value]="uploadProgress" [striped]="true" [animated]="true"></ngb-progressbar>
+                <div class="modal-footer">
+                    <div class="left-side">
+                        <button type="button" class="btn btn-info btn-link" (click)="fileInput.click()">Select File</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="right-side">
+                        <button type="button" class="btn btn-success btn-link" (click)="onUpload()">Upload!</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="right-side">
+                        <button type="button" class="btn btn-danger btn-link" (click)="c('Close click')">Cancel</button>
+                    </div>
+                </div>
+
+            </ng-template>
+
+            <!-- Mobile OTP -->
+            <ng-template #mobileOTP let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center"><b>Mobile Number Verification</b></h5>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="row">
+                        <h5>Please enter the One Time Password sent to your Mobile Number : <b>{{ user.mobNo }}</b></h5>
+                        <div class="col-md-6 ml-auto mr-auto">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="OTP..." [(ngModel)]="mobOTP">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="left-side">
+                        <button type="button" class="btn btn-danger btn-link" (click)="c('Close click')">Cancel</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="right-side">
+                        <button type="button" class="btn btn-success btn-link" (click)="otpconfirm(mobOTP)">Confirm</button>
+                    </div>
+                </div>
+            </ng-template>
+
+
+            <!-- Email Verfication Notice -->
+            <ng-template #emailVerification let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center"><b>Email Verification</b></h5>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="row">
+                        <h5>Kindly Check your email ID : <b>{{ user.email }}</b> for verification Link. Thank You !</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-link" (click)="c('Close click')">Okay!</button>
+                </div>
+            </ng-template>
+
+        </div>
+    </div>
+</div>

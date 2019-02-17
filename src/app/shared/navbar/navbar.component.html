@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']"><span class="text-danger">Duck</span><span class="text-primary">Hacks</span></a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                        <p class="d-lg-none">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="d-lg-none">Instagram</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial/paper-kit-2-angular" target="_blank">
+                        <i class="fa fa-github"></i>
+                        <p class="d-lg-none">GitHub</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a href="http://pk2-angular.creative-tim.com/documentation/tutorial" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Documentation</a>
+                </li>
+                <li class="nav-item" *ngIf="isHome()">
+                    <a href="https://www.creative-tim.com/product/paper-kit-2-pro-angular?ref=pk2-angular-free-local" target="_blank" class="btn btn-danger btn-round">Upgrade to Pro</a>
+                </li>
+                <li class="nav-item" *ngIf="!isHome()">
+                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>
+                </li> -->
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']" [routerLink]="['/landing']" class="nav-link btn-magnify"><i class="nc-icon nc-bookmark-2"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="authService.loggedIn() && user.isAdmin" [routerLinkActive]="['active']" [routerLink]="['/admin-dashboard']" class="nav-link btn-magnify"><i class="nc-icon nc-chart-pie-36"></i>Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/dashboard']" class="nav-link btn-magnify"><i class="nc-icon nc-chart-bar-32"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']" class="nav-link btn-magnify"><i class="nc-icon nc-circle-10"></i>Profile</a>
+                </li>
+                <li *ngIf="!authService.loggedIn()" class="nav-item">
+                    <!-- <a [routerLinkActive]="['active']" [routerLink]="['/login']" class="nav-link btn-magnify"><i class="nc-icon nc-single-02"></i>Login</a> -->
+                    <div ngbDropdown class="d-inline-block dropdown">
+                        <a class="nav-link btn-magnify" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-book-bookmark"></i>Sponsor</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                            <a class="dropdown-item" [routerLink]="['/sponsor-login']">Login</a>
+                            <a class="dropdown-item" [routerLink]="['/sponsor-register']">Register</a>
+                        </div>
+                    </div>
+                </li>
+                <li *ngIf="!authService.loggedIn()" class="nav-item">
+                    <!-- <a [routerLinkActive]="['active']" [routerLink]="['/sponsor-login']" class="nav-link btn-magnify"><i class="nc-icon nc-single-02"></i>Sponsor Login</a> -->
+                    <div ngbDropdown class="d-inline-block dropdown">
+                        <a class="nav-link btn-magnify" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-single-02"></i>User</a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
+                            <a class="dropdown-item" [routerLink]="['/login']">Login</a>
+                            <a class="dropdown-item" [routerLink]="['/register']">Register</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- <li *ngIf="!authService.loggedIn()" class="nav-item">
+                    <a [routerLinkActive]="['active']" [routerLink]="['/register']" class="nav-link btn-magnify"><i class="nc-icon nc-book-bookmark"></i>Register</a>
+                </li>
+                <li *ngIf="!authService.loggedIn()" class="nav-item">
+                    <a [routerLinkActive]="['active']" [routerLink]="['/sponsor-register']" class="nav-link btn-magnify"><i class="nc-icon nc-book-bookmark"></i>Sponsor Register</a>
+                </li> -->
+                <li *ngIf="authService.loggedIn()" class="nav-item">
+                    <a href="#" (click)="onLogoutClick()" class="nav-link btn-magnify"><i class="nc-icon nc-button-power"></i>Logout</a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="isDocumentation()">
+                    <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,80 @@
+<div class="full-screen register">
+    <div class="wrapper">
+        <div class="page-header" style="background-image: url('../assets/img/caitlyn-wilson-612987-unsplash.jpg');">
+            <div class="filter"></div>
+            <div class="container" style="margin-top: 50px; margin-bottom: -50px;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-7 col-12 ml-auto">
+                        <div class="info info-horizontal">
+                            <div class="icon">
+                                <i class="fa fa-umbrella"></i>
+                            </div>
+                            <div class="description">
+                                <h3>Be a better example!</h3>
+                                <p>Teach your kids to let go and help others by donating.</p>
+                            </div>
+                        </div>
+                        <div class="info info-horizontal">
+                            <div class="icon">
+                                <i class="fa fa-map-signs"></i>
+                            </div>
+                            <div class="description">
+                                <h3>Shecdule a pick-up</h3>
+                                <p>Scheduling a pick up today will give you a much needed deadline to finally get organized</p>
+                            </div>
+                        </div>
+                        <div class="info info-horizontal">
+                            <div class="icon">
+                                <i class="fa fa-user-secret"></i>
+                            </div>
+                            <div class="description">
+                                <h3>Donate what you don't use</h3>
+                                <p>Donating your unused items will make you feel great!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-12 mr-auto">
+                        <div class="card card-register">
+                            <h3 class="card-title text-center" style="padding-top: 0px; padding-bottom: 0px;">Register as a Donor/Volunteer</h3>
+                            <div class="social" style="margin-top: -10px; margin-bottom: 0px;">
+                                <button href="#paper-kit" class="btn btn-just-icon btn-facebook" style="color: white !important;"><i class="fa fa-facebook"></i></button>
+                                <button href="#paper-kit" class="btn btn-just-icon btn-google" style="color: white !important;"><i class="fa fa-google"></i></button>
+                                <button href="#paper-kit" class="btn btn-just-icon btn-twitter" style="color: white !important;"><i class="fa fa-twitter"></i></button>
+                            </div>
+
+                            <div class="division" style="margin: 10px 0">
+                                <div class="line l"></div>
+                                <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <form class="register-form" (submit)="onRegisterSubmit()">
+                                <input type="text" [(ngModel)]="first_name" name="first_name" class="form-control" required placeholder="First Name">
+
+                                <input type="text" [(ngModel)]="last_name" name="last_name" class="form-control" required placeholder="Last Name">
+
+                                <input type="text" [(ngModel)]="username" name="username" class="form-control" required placeholder="Username" (blur)="checkUsername()">
+
+                                <input type="text" [(ngModel)]="email" name="email" class="form-control" required placeholder="Email Id" (blur)="checkEmail()">
+
+                                <input type="password" [(ngModel)]="password" name="password" class="form-control" required placeholder="Password">
+
+                                <div class="form-check">
+                                  <label class="form-check-label" style="color: black;">
+                                    <input [(ngModel)]="isVolunteer" name="isVolunteer" class="form-check-input" type="checkbox">
+                                    I want to be a volunteer too!
+                                    <span class="form-check-sign"></span>
+                                  </label>
+                                </div>
+
+                                <button class="btn btn-block btn-round">Register</button>
+                            </form>
+                            <div class="login">
+                                <p>Already have an account? <a href="#0">Log in</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

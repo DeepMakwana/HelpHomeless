@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<!-- LOADER START -->
+<div class="binder" [ngStyle]="{'display': showLoader? 'block' : 'none'}">
+  <div class="overlay"></div>
+  <div class="ml-auto mr-auto">
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+    <img src="assets/img/angular2-logo.png" alt="">
+  </div>
+</div>
+<!-- LOADER END -->
+
+<flash-message></flash-message>
+<router-outlet></router-outlet>
+<app-footer *ngIf="removeFooter()"></app-footer>

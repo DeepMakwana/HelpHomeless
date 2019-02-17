@@ -1,0 +1,90 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/andres-medina-229063-unsplash.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            <h1 class="text-center"> Admin Dashboard </h1>
+            <hr />
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-danger">
+                            <h4 class="card-title" style="color: white;">
+                                Overview
+                                <div class="ripple-container"></div>
+                            </h4>
+                        </div>
+                        <div class="card-body text-center" style="margin-bottom: -25px;">
+                            <div class="text-center">
+                                <p style="font-weight: bold;">Total Donations: $50000</p>
+                                <hr/>
+                                <p style="font-weight: bold;">Total Clothes: 500</p>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                        <!-- <div class="card-footer text-center">
+                            <hr />
+                            <button type="button" class="btn btn-danger btn-round" (click)="openacdetails()">jjhjh</button>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header text-center bg-info">
+                            <h4 class="card-title" style="color: white;">
+                                Coupons Approved
+                                <div class="ripple-container"></div>
+                            </h4>
+                        </div>
+                        <div class="card-body text-center" style="margin-bottom: -25px;">
+                            <div class="text-center">
+                                <canvas baseChart
+                                  [data]="doughnutChartData"
+                                  [labels]="doughnutChartLabels"
+                                  [chartType]="doughnutChartType"
+                                  [options]="doughnutChartOptions"
+                                  [colors]="doughnutChartColor"
+                                  (chartHover)="chartHovered($event)"
+                                  (chartClick)="chartClicked($event)"></canvas>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                        <!-- <div class="card-footer text-center">
+                            <hr />
+                            <button type="button" class="btn btn-danger btn-round" (click)="openacdetails()">jjhjh</button>
+                        </div> -->
+                    </div>
+                    <div class="card">
+                        <div class="card-header text-center bg-info">
+                            <h4 class="card-title" style="color: white;">
+                                Donations Picked
+                                <div class="ripple-container"></div>
+                            </h4>
+                        </div>
+                        <div class="card-body text-center" style="margin-bottom: -25px;">
+                            <div class="text-center">
+                                <canvas baseChart
+                                [data]="doughnutChartData1"
+                                [labels]="doughnutChartLabels1"
+                                [chartType]="doughnutChartType"
+                                [options]="doughnutChartOptions"
+                                [colors]="doughnutChartColor"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                        <!-- <div class="card-footer text-center">
+                            <hr />
+                            <button type="button" class="btn btn-danger btn-round" (click)="openacdetails()">jjhjh</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
