@@ -48,13 +48,13 @@
                     <a [routerLinkActive]="['active']" [routerLink]="['/landing']" class="nav-link btn-magnify"><i class="nc-icon nc-bookmark-2"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a *ngIf="authService.loggedIn() && user.isAdmin" [routerLinkActive]="['active']" [routerLink]="['/admin-dashboard']" class="nav-link btn-magnify"><i class="nc-icon nc-chart-pie-36"></i>Admin</a>
+                    <a *ngIf="authService.loggedIn() && isAdmin()" [routerLinkActive]="['active']" [routerLink]="['/admin-dashboard']" class="nav-link btn-magnify"><i class="nc-icon nc-chart-pie-36"></i>Admin</a>
                 </li>
                 <li class="nav-item">
                     <a *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/dashboard']" class="nav-link btn-magnify"><i class="nc-icon nc-chart-bar-32"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']" class="nav-link btn-magnify"><i class="nc-icon nc-circle-10"></i>Profile</a>
+                    <a *ngIf="authService.loggedIn() && showProfile()" [routerLinkActive]="['active']" [routerLink]="['/profile']" class="nav-link btn-magnify"><i class="nc-icon nc-circle-10"></i>Profile</a>
                 </li>
                 <li *ngIf="!authService.loggedIn()" class="nav-item">
                     <!-- <a [routerLinkActive]="['active']" [routerLink]="['/login']" class="nav-link btn-magnify"><i class="nc-icon nc-single-02"></i>Login</a> -->

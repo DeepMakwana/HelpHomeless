@@ -15,19 +15,7 @@
 
                             <label>Coupon Code:</label>
                             <input [(ngModel)]="coupon_code" name="coupon_code" type="text" class="form-control" placeholder="Coupon Code">
-                            
 
-                           <div class="form-group">
-                                                    <div class="input-group date" [ngClass]="{'input-group-focus':focus===true}">
-                                                        <input class="form-control" placeholder="yyyy-mm-dd" name="date" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus=true" (blur)="focus=false" />
-                                                        <div class="input-group-append">
-                                                            <span class="glyphicon glyphicon-calendar input-group-text">
-                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                           
                             <label>Validity:</label>
                             <div class="form-group">
                                 <div class="input-group date" [ngClass]="{'input-group-focus':focus===true}">
@@ -42,15 +30,10 @@
 
 
                             <button class="btn btn-info btn-block btn-round">Submit</button>
-
-
                         </form>
-                        <div class="forgot">
-                            <a href="#" class="btn btn-link btn-info">Forgot password?</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>

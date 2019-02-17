@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
     user: any;
+    display: Boolean = false;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
@@ -25,7 +26,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.user = JSON.parse(localStorage.getItem('user'));
+
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     }
@@ -74,6 +75,22 @@ export class NavbarComponent implements OnInit {
             return true;
         }
         else {
+            return false;
+        }
+    }
+
+    showProfile(){
+        if(JSON.parse(localStorage.getItem('user')).first_name){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    isAdmin(){
+        if(JSON.parse(localStorage.getItem('user')).isAdmin){
+            return true;
+        } else {
             return false;
         }
     }
